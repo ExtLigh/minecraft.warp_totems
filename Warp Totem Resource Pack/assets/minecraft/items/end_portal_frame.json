@@ -1,0 +1,110 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:component",
+    "predicate": "minecraft:custom_data",
+    "value": {
+      "xtligh:warp_totem": true
+    },
+    "on_true": {
+       "type": "minecraft:condition",
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "xtligh:item/totem_of_warping/totem_of_warping"
+    },
+    "on_true": {
+      "type": "minecraft:range_dispatch",
+      "entries": [
+        {
+          "model": {
+            "type": "minecraft:composite",
+            "models": [{"type": "minecraft:model","model":"xtligh:item/totem_of_warping/totem_of_warping_charge_0"},{"type": "minecraft:model","model":"xtligh:item/totem_of_warping/totem_of_warping"}]
+          },
+          "threshold": 0.1
+        },
+        {
+          "model": {
+            "type": "minecraft:composite",
+            "models": [{"type": "minecraft:model","model":"xtligh:item/totem_of_warping/totem_of_warping_charge_1"},{"type": "minecraft:model","model":"xtligh:item/totem_of_warping/totem_of_warping"}]
+          },
+          "threshold": 0.2
+        },
+        {
+          "model": {
+            "type": "minecraft:composite",
+            "models": [{"type": "minecraft:model","model":"xtligh:item/totem_of_warping/totem_of_warping_charge_1"},{"type": "minecraft:model","model":"xtligh:item/totem_of_warping/totem_of_warping_decay_0"}]
+          },
+          "threshold": 0.4
+        },
+        {
+          "model": {
+            "type": "minecraft:composite",
+            "models": [{"type": "minecraft:model","model":"xtligh:item/totem_of_warping/totem_of_warping_charge_2"},{"type": "minecraft:model","model":"xtligh:item/totem_of_warping/totem_of_warping_decay_1"}]
+          },
+          "threshold": 0.6
+        },
+        {
+          "model": {
+            "type": "model",
+            "model": "xtligh:item/totem_of_warping/totem_of_warping_charge_2"
+          },
+          "threshold": 0.8
+        },
+        {
+          "model": {
+            "type": "model",
+            "model": "xtligh:item/totem_of_warping/totem_of_warping_used_0"
+          },
+          "threshold": 0.94
+        },
+        {
+          "model": {
+            "type": "model",
+            "model": "xtligh:item/totem_of_warping/totem_of_warping_used_1"
+          },
+          "threshold": 0.95
+        },
+        {
+          "model": {
+            "type": "model",
+            "model": "xtligh:item/totem_of_warping/totem_of_warping_used_2"
+          },
+          "threshold": 0.96
+        },
+        {
+          "model": {
+            "type": "model",
+            "model": "xtligh:item/totem_of_warping/totem_of_warping_used_3"
+          },
+          "threshold": 0.97
+        },
+        {
+          "model": {
+            "type": "model",
+            "model": "xtligh:item/totem_of_warping/totem_of_warping_used_4"
+          },
+          "threshold": 0.98
+        },
+        {
+          "model": {
+            "type": "model",
+            "model": "xtligh:item/totem_of_warping/totem_of_warping_used_5"
+          },
+          "threshold": 0.99
+        }
+      ],
+      "fallback": {
+        "type": "minecraft:model",
+        "model": "xtligh:item/totem_of_warping/totem_of_warping"
+      },
+      "property": "minecraft:use_duration",
+      "scale": 0.01
+    },
+    "property": "minecraft:using_item"
+    },
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "minecraft:block/end_portal_frame"
+    }
+  }
+}

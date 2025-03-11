@@ -1,0 +1,23 @@
+{
+  "criteria": {
+    "impossible": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:gui/advancements/backgrounds/end",
+    "description": "",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:cherry_sapling"
+    },
+    "show_toast": false,
+    "title": "Extligh's Datapack Advancements"
+  },
+  "requirements": [
+    [
+      "impossible"
+    ]
+  ]
+}

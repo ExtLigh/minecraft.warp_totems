@@ -1,0 +1,60 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:diamond",
+    "$": [
+      "minecraft:obsidian",
+      "minecraft:crying_obsidian"
+    ],
+    "%": "minecraft:ender_pearl"
+  },
+  "pattern": [
+    "#$#",
+    "$%$",
+    " $ "
+  ],
+  "result": {
+    "components": {
+      "minecraft:consumable": {
+        "consume_seconds": 5,
+        "animation": "bow",
+        "sound": "minecraft:entity.enderman.ambient",
+        "has_consume_particles": false,
+        "on_consume_effects": [
+          {
+            "type": "minecraft:play_sound",
+            "sound": "minecraft:entity.player.teleport"
+          }
+        ]
+      },
+      "minecraft:rarity": "uncommon",
+      "minecraft:item_model": "minecraft:end_portal_frame",
+      "minecraft:item_name": "Totem of Warping",
+      "minecraft:lore": [
+        "Use a lodestone to set warp",
+        {
+          "text": "If warp isn't set, warps to ",
+          "extra": [
+            {
+              "text": "your",
+              "underlined": true
+            },
+            " spawnpoint"
+          ]
+        }
+      ],
+      "minecraft:max_stack_size": 16,
+      "minecraft:custom_data": {
+        "xtligh:warp_totem": true
+      },
+      "minecraft:custom_name": {
+        "text": "Totem of Warping",
+        "italic": false
+      }
+    },
+    "count": 1,
+    "id": "minecraft:compass"
+  },
+  "show_notification": true
+}

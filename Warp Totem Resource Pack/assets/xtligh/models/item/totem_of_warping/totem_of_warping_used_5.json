@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "xtligh:item/totem_of_warping/totem_of_warping_used_5"
+  }
+}

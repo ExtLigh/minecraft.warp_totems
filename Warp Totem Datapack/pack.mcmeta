@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "description": "Warp Totems",
+    "pack_format": 62,
+    "supported_formats": {
+      "min_inclusive": 62,
+      "max_inclusive": 999
+    }
+  }
+}
