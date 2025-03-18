@@ -1,26 +1,17 @@
-#removes advancement to make warp repeatable
-advancement revoke @s only xtligh:warp_totem
-
-#sets warp location to player's spawn
-data modify storage xtligh:warp x set from entity @s respawn.pos[0]
-data modify storage xtligh:warp y set from entity @s respawn.pos[1]
-data modify storage xtligh:warp z set from entity @s respawn.pos[2]
-data modify storage xtligh:warp d set value "minecraft:overworld"
-data modify storage xtligh:warp d set from entity @s respawn.dimension
-
 #sets warp location to lodestone (if possible)
 #offhand
-execute unless data entity @s SelectedItem.components.minecraft:custom_data.xtligh:warp_totem if data entity @s equipment.offhand.components.minecraft:lodestone_tracker run data modify storage xtligh:warp x set from entity @s equipment.offhand.components.minecraft:lodestone_tracker.target.pos[0]
-execute unless data entity @s SelectedItem.components.minecraft:custom_data.xtligh:warp_totem if data entity @s equipment.offhand.components.minecraft:lodestone_tracker run data modify storage xtligh:warp y set from entity @s equipment.offhand.components.minecraft:lodestone_tracker.target.pos[1]
-execute unless data entity @s SelectedItem.components.minecraft:custom_data.xtligh:warp_totem if data entity @s equipment.offhand.components.minecraft:lodestone_tracker run data modify storage xtligh:warp z set from entity @s equipment.offhand.components.minecraft:lodestone_tracker.target.pos[2]
-execute unless data entity @s SelectedItem.components.minecraft:custom_data.xtligh:warp_totem if data entity @s equipment.offhand.components.minecraft:lodestone_tracker run data modify storage xtligh:warp d set from entity @s equipment.offhand.components.minecraft:lodestone_tracker.target.dimension
+execute unless data entity extremelighning SelectedItem.components.minecraft:custom_data.xtligh:warp_totem if data entity extremelighning equipment.offhand.components.minecraft:custom_data.xtligh:warp_totem run scoreboard players add @s xtligh.warp_totem.timer 1
+
 #mainhand
-execute if data entity @s SelectedItem.components.minecraft:lodestone_tracker run data modify storage xtligh:warp x set from entity @s SelectedItem.components.minecraft:lodestone_tracker.target.pos[0]
-execute if data entity @s SelectedItem.components.minecraft:lodestone_tracker run data modify storage xtligh:warp y set from entity @s SelectedItem.components.minecraft:lodestone_tracker.target.pos[1]
-execute if data entity @s SelectedItem.components.minecraft:lodestone_tracker run data modify storage xtligh:warp z set from entity @s SelectedItem.components.minecraft:lodestone_tracker.target.pos[2]
-execute if data entity @s SelectedItem.components.minecraft:lodestone_tracker run data modify storage xtligh:warp d set from entity @s SelectedItem.components.minecraft:lodestone_tracker.target.dimension
+execute if data entity extremelighning SelectedItem.components.minecraft:custom_data.xtligh:warp_totem run scoreboard players add @s xtligh.warp_totem.timer 1
 
-execute unless data storage xtligh:warp x run tellraw @s {"text":"You have no home bed or charged respawn anchor, or it was obstructed"}
+#checks if player has stopped using the totem
+scoreboard players operation @s xtligh.warp_totem.time_since_charged = server_timer xtligh.server_time
+scoreboard players add @s xtligh.warp_totem.time_since_charged 1
+schedule function xtligh:warp_totem/check_charge 2t append
 
-#teleports the player
-function xtligh:warp_totem/warp with storage xtligh:warp
+#start teleport
+execute if score @s xtligh.warp_totem.timer = charged xtligh.warp_totem.timer at @s run function xtligh:warp_totem/get_cords
+
+#removes advancement to make warp repeatable
+advancement revoke @s only xtligh:warp_totem

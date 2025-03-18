@@ -1,0 +1,1 @@
+scoreboard players add server_timer xtligh.server_time 1

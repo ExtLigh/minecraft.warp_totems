@@ -1,0 +1,1 @@
+execute as @a run execute if score @s xtligh.warp_totem.time_since_charged < server_timer xtligh.server_time run scoreboard players set @s xtligh.warp_totem.timer 0

@@ -12,7 +12,7 @@
   "parent": "xtligh:root",
   "criteria": {
     "warp_totem_used": {
-      "trigger": "minecraft:consume_item",
+      "trigger": "minecraft:using_item",
       "conditions": {
         "item": {
           "items": "minecraft:compass",
