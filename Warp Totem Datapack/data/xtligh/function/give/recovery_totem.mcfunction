@@ -1,0 +1,1 @@
+give @s recovery_compass[max_stack_size=1,custom_data={"xtligh:recovery_totem":true},lore=["Warps to last death location"],item_name=[{"text":"Totem of Recovery","italic":false}],rarity=uncommon,consumable={consume_seconds:10000,animation:bow,sound:"minecraft:entity.warden.heartbeat",has_consume_particles:false},item_model="minecraft:reinforced_deepslate"]

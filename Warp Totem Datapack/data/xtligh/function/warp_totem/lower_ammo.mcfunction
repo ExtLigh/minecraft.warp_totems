@@ -1,0 +1,1 @@
+$item modify entity @s container.$(ammo_slot) {"function":"minecraft:set_count","count":-1,"add":true,"conditions":[]}

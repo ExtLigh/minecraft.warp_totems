@@ -1,3 +1,7 @@
+#reduces ammo
+data modify storage xtligh:warp_totem ammo_slot set from entity @s Inventory[{id:"minecraft:ender_pearl"}].Slot
+execute if entity @s[gamemode=!creative] if score requires_ammo xtligh.warp_totems.config matches 1 run function xtligh:warp_totem/lower_ammo with storage xtligh:warp_totem
+
 #sets warp location to player's spawn
 data modify storage xtligh:warp x set from entity @s respawn.pos[0]
 data modify storage xtligh:warp y set from entity @s respawn.pos[1]
